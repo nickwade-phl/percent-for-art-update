@@ -26,7 +26,7 @@ smtpObj.login(sender,password)
 arcpy.env.workspace = "G:/A_STAFF/DanWhaland/PRA Percent for Art/PRA_P4A_Final.gdb"
 
 # Allow overwrite of existing files
-arcpy.env.overwriteOutput = True
+arcpy.env.overwriteOutput = 'TRUE'
 
 # Since arcpy.env.overwriteOutput does not seem to be working in ArcPro 2.4, use this line to delete the two _rev layers before creating them again
 if arcpy.Exists("Percent_for_Art_Enterprise_rev"):
@@ -44,19 +44,19 @@ New_P4A_Enterprise = "Percent_for_Art_Enterprise_rev"
 arcpy.CopyFeatures_management(Master_P4A, New_P4A_Enterprise)
 
 # Change field names to match metadata 
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_P4A_ID", "P4A_ID")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Status", "Status")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Artist", "Artist")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Title", "Title")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Date", "Date")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Location_N", "Location_Name")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Address", "Address")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Location_1", "Location_Note")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Medium", "Medium")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Neighborho", "Neighborhood")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Owner", "Owner")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Note", "Note")
-arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Google_Str", "Google_Streetview_Link")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_P4A_ID", "P4A_ID", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Status", "Status", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Artist", "Artist", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Title", "Title", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Date", "Date_", "Date")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Location_N", "Location_Name", "Location Name")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Address", "Address", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Location_1", "Location_Note", "Location Note")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Medium", "Medium", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Neighborho", "Neighborhood", "Neighborhood")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Owner", "Owner", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Note", "Note", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Google_Str", "Google_Streetview_Link", "Google Street View Link")
 
 # Delete extra fields
 arcpy.DeleteField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Artist")
