@@ -45,6 +45,7 @@ arcpy.CopyFeatures_management(Master_P4A, New_P4A_Enterprise)
 
 # Change field names to match metadata 
 arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_P4A_ID", "P4A_ID", new_field_alias="", clear_field_alias="TRUE")
+arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Image", "Image", new_field_alias="", clear_field_alias="TRUE")
 arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Status", "Status", new_field_alias="", clear_field_alias="TRUE")
 arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Artist", "Artist", new_field_alias="", clear_field_alias="TRUE")
 arcpy.AlterField_management(New_P4A_Enterprise, "Percent_for_Art_Master_Table_csv_Title", "Title", new_field_alias="", clear_field_alias="TRUE")
