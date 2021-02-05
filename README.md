@@ -1,2 +1,2 @@
 # percent-for-art-update
-Script to update the Percent for Art GIS layers.
+Run these three scripts in succession to update the working versions of the Percent for Art layers before they are added to databridge. 
