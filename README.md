@@ -9,10 +9,11 @@ Three arcpy scripts that run in succession to update the working versions of the
   remove them from the map. 
   
 3.	Use the following workflow to update the working versions of the Percent for Art layers:
-    a.	From the Python window, load in and run update_first_part.py. 
+    a.	From the Python window, load in and run update_first_part.py.
     b.	Remove Percent_for_Art_Enterprise_rev from the Contents pane.
     c.	From the Python window, load in and run update_second_part.py
     d.	Remove Percent_for_Art_Enterprise_rev from the Contents pane.
     e.	From the Python window, load in and run update_third_part.py
-    4.	Truncate/append: Use the Truncate tool on the DataBridge versions of the layers (GIS_PLANNING.Percent_for_Art_Public and GIS_PLANNING.Percent_for_Art_Enterprise). Then use 
+ 
+ 4.	Truncate/append: Use the Truncate tool on the DataBridge versions of the layers (GIS_PLANNING.Percent_for_Art_Public and GIS_PLANNING.Percent_for_Art_Enterprise). Then use 
         the append tool on those layers to append Percent_for_Art_Enterprise_rev and Percent_for_Art_Public_rev to the appropriate DataBridge layers. 
